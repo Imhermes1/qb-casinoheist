@@ -1,3 +1,4 @@
+local QBCore = exports['qb-core']:GetCoreObject()
 RegisterServerEvent('qb-casinoheist:server:spawnvault')
 AddEventHandler('qb-casinoheist:server:spawnvault', function(type)
     ajvault = CreateObject(`ch_prop_ch_vaultdoor01x`, Config.VaultDoors[1].x - 0.05, Config.VaultDoors[1].y + 1, Config.VaultDoors[1].z - 2.03, true, true, true)
@@ -22,11 +23,11 @@ RegisterServerEvent('qb-casinoheist:server:recieveLockerItem')
 AddEventHandler('qb-casinoheist:server:recieveLockerItem', function(type)
     local src = source
     local ply = QBCore.Functions.GetPlayer(src)
-    ply.Functions.AddItem('10kgoldchain', math.random(1,5))
+    ply.Functions.AddItem('10kgoldchain', math.random(5,10))
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['10kgoldchain'], "add")
     chance = math.random(1, 10)
     if chance == 2 then
-        ply.Functions.AddItem('diamond_ring', math.random(1,3))
+        ply.Functions.AddItem('diamond_ring', math.random(5,7))
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['diamond_ring'], "add")
     end
 end)
@@ -46,7 +47,7 @@ RegisterServerEvent('qb-casinoheist:server:recieveGoldItem')
 AddEventHandler('qb-casinoheist:server:recieveGoldItem', function(type)
     local src = source
     local ply = QBCore.Functions.GetPlayer(src)
-    ply.Functions.AddItem('goldbar', math.random(1,5), false)
+    ply.Functions.AddItem('goldbar', math.random(5,6), false)
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['goldbar'], "add")
 end)
 

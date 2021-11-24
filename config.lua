@@ -6,9 +6,9 @@ Config.BombTime = 30
 
 Config.HackTime = 30
 
-Config.MarkedBagMin = 1
+Config.MarkedBagMin = 5
 
-Config.MarkedBagMax = 5
+Config.MarkedBagMax = 10
 
 Config.MarkedMin = 1000
 
